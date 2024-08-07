@@ -1,0 +1,17 @@
+
+<!-- <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/students/{{myStudent.id}}" style="text-decoration: none;">
+<div class="alert alert-info m-2 text-center" style="width: 400px;">
+<h1>{{myStudent.first_name}}</h1>
+</div>
+</a> -->
+
+
+<div class="card mb-3 me-4" style="width: 25rem;height: 14rem;">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <img src={{user.avatar}} alt="student Img" style="border-radius: 50%;margin-right: 5%;"> 
+            <h5 class="card-title">{{user.first_name}} {{user.last_name}}</h5>
+        </div>
+      <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/users/{{user.id}}" class="btn" style="margin-left: 66%;background-color: rgb(101, 93, 190);font-weight: bold;color: white;">More Info</a>
+    </div>
+  </div>
