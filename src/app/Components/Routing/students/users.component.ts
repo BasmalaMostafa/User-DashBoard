@@ -8,7 +8,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { HeaderComponent } from '../../header/header.component';
 
 @Component({
-  selector: 'app-students',
+  selector: 'app-users',
   standalone: true,
   imports: [UserComponent,HttpClientModule,CommonModule,RouterModule,NgxPaginationModule,HeaderComponent],
   providers:[UsersService],
@@ -29,7 +29,7 @@ export class UsersComponent {
         this.myData=data;
         console.log(this.myData);
         this.PageOneUsers=this.myData['data'];
-   // console.log(this.students);
+   // console.log(this.PageOneUsers);
 
       },
       error:(error)=>{
