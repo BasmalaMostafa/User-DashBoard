@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { UserComponent } from '../../student/user.component';
 import { UsersService } from '../../../Services/users.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,6 +20,7 @@ export class UsersComponent {
   PageOneUsers:any;
   allUsers:any;
   index: number = 1;
+  user:any;
 
   constructor(private usersService:UsersService){}
 
@@ -58,5 +59,22 @@ export class UsersComponent {
         
       }
     });
+  }
+
+  handleUserDataChange(id: any): void {
+    // console.log(this.m)
+    if (id) {
+      this.usersService.getUserById(id).subscribe({
+        next: (data) => {
+          this.myData=data;
+          this.user=this.myData['data'];
+        },
+        error: (err) => {
+          console.error(err);
+        }
+      });
+    }
+    console.log('Selected User Data:', id);
+    // Perform any other actions needed with the user data
   }
 }
