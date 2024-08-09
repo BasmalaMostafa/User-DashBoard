@@ -1,0 +1,34 @@
+    
+    <app-header (event)="handleUserDataChange($event)"></app-header>
+
+    @if(!isLoading){
+        @if(notInRange){
+            <div class="d-flex" style="align-items: center;justify-content: center;height: 100%;">
+                <h1 style="color: gray;">This ID is not found! :'(</h1>
+            </div>
+        }
+        @else if (user) {
+            <div class="d-flex" style="flex-wrap: wrap;justify-content: center;margin-top: 3%;">
+            <app-user [user]="user"></app-user>
+        </div>
+    }@else if (allUsers.length===0) {
+        <div class="d-flex" style="align-items: center;justify-content: center;height: 100%;">
+            <h1 style="color: gray;">There is no users found! :'(</h1>
+        </div>
+    }@else {
+            <div class="d-flex" style="flex-wrap: wrap;justify-content: center;margin-top: 3%;">
+                @for (s of allUsers| paginate: { itemsPerPage: 6, currentPage: index}; track s.id) {
+                    <app-user [user]="s"></app-user>
+                }
+                </div>
+        
+                <div class="d-flex justify-content-center mt-3"> 
+                <pagination-controls (pageChange)="index = $event"></pagination-controls>
+                  </div>
+        }
+    }@else {
+        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+            <div class="loadingIndicator"></div>
+        </div>
+    }
+   

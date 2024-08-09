@@ -5,6 +5,6 @@
             <img src={{user.avatar}} alt="student Img" style="border-radius: 50%;margin-right: 5%;"> 
             <h5 class="card-title">{{user.first_name}} {{user.last_name}}</h5>
         </div>
-      <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/users/{{user.id}}" class="btn" style="margin-left: 66%;background-color: rgb(101, 93, 190);font-weight: bold;color: white;">More Info</a>
+      <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/users/{{user.id}}" class="btn" style="margin-left: 66%;background-color: rgb(101, 93, 190);font-weight: bold;color: white;transition: transform 0.3s ease-in-out;" ButtonStyle>More Info</a>
     </div>
   </div>

@@ -11,48 +11,12 @@ import {FormsModule } from '@angular/forms';
   templateUrl: './header.component.html',
   styles: ``
 })
-export class HeaderComponent implements OnInit{
-  user:any;
-  myData:any;
+export class HeaderComponent{
   userId:any;
   @Output() event= new EventEmitter();
 
-  constructor(private usersService:UsersService){}
-
-  ngOnInit(): void {
-    // console.log(this.userId)
-    // if(this.userId){
-    //   this.usersService.getUserById(this.userId).subscribe({
-    //   next:(data)=>{
-    //     this.myData=data;
-    //     this.user=this.myData['data'];
-    //     console.log(this.user)
-    //     this.event.emit(this.user);
-    //   },
-    //   error:(err)=>{
-    //     console.log(err);
-    //   }
-    // });
-    // }
-  }
-
   onUserIdChange(): void {
-    // Emit the event whenever userId changes
-    //this.event.emit(this.userId);
     console.log(this.userId)
-    // Optionally, fetch user data by ID if needed
-    if (this.userId) {
-      // this.usersService.getUserById(this.userId).subscribe({
-      //   next: (data) => {
-      //     this.myData=data;
-      //     this.user=this.myData['data'];
-      //     this.event.emit(this.user); // Emit the user data
-      //   },
-      //   error: (err) => {
-      //     console.error(err);
-      //   }
-      // });
       this.event.emit(this.userId); 
-    }
   }
 }

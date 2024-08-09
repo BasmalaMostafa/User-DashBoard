@@ -1,6 +1,7 @@
 
 .body{
-    background-color: rgb(249, 245, 245);
+    /* background-color: rgb(249, 245, 245); */
+    background-color: #f3f3f3;
     height: 700px;
     display: flex;
     align-items: center; 

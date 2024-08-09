@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener } from "@angular/core";
+import { Directive, HostListener } from "@angular/core";
 import { NavigationService } from "../Services/navigation.service";
 
 
@@ -8,19 +8,10 @@ import { NavigationService } from "../Services/navigation.service";
   standalone:true
 })
 export class BackButtonDirective {
-  constructor(private navigation: NavigationService,public btn:ElementRef) {}
+  constructor(private navigation: NavigationService) {}
  
   @HostListener("click")
   onClick(): void {
     this.navigation.back();
   }
-
-  @HostListener("mouseover") onMouseOver(): void {
-    this.btn.nativeElement.style.transform = 'scale(1.1)';
-  }
-
-  @HostListener("mouseout") onMouseOut(): void {
-    this.btn.nativeElement.style.transform = 'scale(1)';
-  }
-
   }

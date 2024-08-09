@@ -1,0 +1,37 @@
+<nav class="navbar" data-bs-theme="white" style="background-color:rgb(101, 93, 190);">
+    <div class="container-fluid">
+      <a class="navbar-brand" style="font-weight: bold;color: white;margin-left: 45%;font-size: 25;">User Details</a>
+    </div>
+  </nav>
+
+  @if (!isLoading) {
+    @if(user){
+      <div class="body text-center">
+           <div class="alert container">
+                  <div class="alert colored-container">
+                  </div>
+                  <div class="ImgContainer">
+                       <img src={{user.avatar}} alt="user img" class="userImg">
+                  </div>
+  
+          <h4 class="name">{{user.first_name}} {{user.last_name}}</h4>
+          <div class="d-flex justify-content-center mb-3">
+              <p style="color: blueviolet;font-size:17px;font-weight:bold;">Email :&nbsp; </p>
+              <p class="email">{{user.email}}</p>
+              <p style="color: blueviolet;font-size:17px;font-weight:bold;"> &nbsp;,ID :&nbsp; </p>
+              <p style="font-size:17px;font-weight:500;color: gray;">{{user.id}}</p>
+          </div>
+  
+                  <p style="color: grey;font-size:14px;font-weight:400;width: 80%;display: flex;justify-content: center;margin-left: 10%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate saepe tempore ipsum rem sapiente corporis officiis qui perferendis aperiam suscipit amet, optio quisquam placeat illum cum nemo quibusdam aut eveniet!</p>
+         
+                  <button class="btn" style="background-color:rgb(101, 93, 190);color: white;font-weight: bold;width: 50%;margin-left: 25%;transition: transform 0.3s ease-in-out;" backButton ButtonStyle>Home Page</button>
+              </div>
+      </div>
+      
+  }
+  
+  }@else {
+    <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+      <div class="loadingIndicator"></div>
+  </div>
+  }
